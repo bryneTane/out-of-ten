@@ -1,0 +1,81 @@
+.field{
+    display: block;
+    width: 80%;
+    height: 45px;
+    margin: 3% 10% 3% 10%;
+    /* opacity: 0.2; */
+    font-size: 1.1em;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: none;
+    text-align: center;
+}
+
+.field:focus {
+    border-bottom: 5px solid rgb(0, 94, 62);
+    background-color: rgba(0, 0, 0, 0);
+    animation-duration: 0.8s;
+    animation-name: in;   
+}
+
+.error{
+    border-bottom: 5px solid rgb(255, 0, 0);
+    background-color: rgba(236, 84, 14, 0.3);
+}
+
+@keyframes in {
+    0% {
+        background-color: rgba(0, 0, 0, 0.1);
+        border: none;
+        width: 80%; 
+    }
+  
+    50% {
+        width: 0%;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    
+    100% {
+        border-bottom: 5px solid rgb(0, 94, 62);
+        width: 80%;
+    }
+}
+
+.submit{
+    width: 80%;
+    height: 50px;
+    font-size: 1.3em;
+    /* background-color: rgb(210, 233, 210); */
+    border: none;
+    margin-top: 3%;
+    /* opacity: 0.5; */
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.linkConIns{
+    display: inline-block;
+    margin-bottom: 10%;
+    margin-top: 5%;
+}
+
+.submit:hover{
+    background-color: green;
+    color: rgb(210, 233, 210);
+}
+
+.form{
+    text-align: center;
+}   
+
+.logo{
+    margin: 0% 11% 0% 19%;
+    width: 70%;
+}
+
+.home{
+    /* background-color: rgb(210, 233, 210); */
+    background-image: url('../background.png');
+    background-repeat: no-repeat;
+    background-size: 150% 100%;
+    text-align: center;
+}
