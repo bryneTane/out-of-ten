@@ -25,7 +25,7 @@ export default class Connexion extends Component {
         else this.setState({
             login: data.login ? false : true,
             password: data.password ? false : true,
-            message: "Veuillez remplir tous les champs"
+            message: "Veuillez remplir tous les champs !"
         });
     }
         
@@ -42,6 +42,7 @@ export default class Connexion extends Component {
         return(
             <div className="home">
                 <img src={`${process.env.PUBLIC_URL}/img/logo.png`} alt="/10" className="logo" />
+                <span className="errorMessage">{this.state.message}</span>
                 <h1>Connexion</h1>
                 <Form
                     // model={this.personModel}

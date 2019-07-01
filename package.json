@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "antd": "^3.19.8",
+    "antd-mobile": "^2.2.14",
     "react": "^16.8.6",
     "react-components-form": "^3.7.0",
     "react-dom": "^16.8.6",
