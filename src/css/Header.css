@@ -1,10 +1,19 @@
-#tab-bar.demo {
-    display: flex;
-    flex-direction: column;
-  }
-  #tab-bar .demoName {
-    height: 40px;
-  }
-  #tab-bar .demo-preview-item .am-tab-bar {
-    background-color: white;
-  }
+.headerLogo{
+    display: inline-block;
+    width: 15%;
+    margin: 0% 25% 0% 25%;
+    padding-top: 1.5%;
+}
+
+.headerIcon{
+    font-size: 1.6em;
+    vertical-align: 30%;
+    color: white;
+}
+
+.header{
+    text-align: center;
+    background-image: url('../background.png');
+    background-repeat: no-repeat;
+    background-size: 150% 100%;
+}

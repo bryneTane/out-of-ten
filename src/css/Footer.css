@@ -1,0 +1,21 @@
+.footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    padding-top: 2%;
+    /* border-top: 1px solid #066422; */
+    color: #066422;
+    -webkit-box-shadow: 0px -4px 3px #066422;
+  -moz-box-shadow: 0px -4px 3px #066422;
+  box-shadow: 0px 0px 6px #066422;
+}
+
+.footerElt{
+    display: inline-block;
+    text-align: center;
+    width: 25%;
+}
+
+.iconTitle{
+    font-size: 0.7em;
+}

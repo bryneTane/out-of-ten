@@ -1,0 +1,29 @@
+{
+    "menu": [
+        {
+            
+        }
+    ],
+    "footer": [
+        {
+            "title": "Recherche",
+            "icon": "search",
+            "link": "#"
+        },
+        {
+            "title": "Accueil",
+            "icon": "home",
+            "link": "#"
+        },
+        {
+            "title": "Profil",
+            "icon": "user",
+            "link": "#"
+        },
+        {
+            "title": "Chat",
+            "icon": "message",
+            "link": "#"
+        }
+    ]
+}
