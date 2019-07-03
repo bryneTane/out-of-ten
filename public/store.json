@@ -1,7 +1,29 @@
 {
     "menu": [
         {
-            
+            "title": "Profil",
+            "icon": "user",
+            "link": "#"
+        },
+        {
+            "title": "Favoris",
+            "icon": "star",
+            "link": ""
+        },
+        {
+            "title": "Inviter des amis",
+            "icon": "copy",
+            "link": ""
+        },
+        {
+            "title": "À propos",
+            "icon": "info-circle",
+            "link": ""
+        },
+        {
+            "title": "Déconnexion",
+            "icon": "poweroff",
+            "link": ""
         }
     ],
     "footer": [
@@ -16,7 +38,7 @@
             "link": "#"
         },
         {
-            "title": "Profil",
+            "title": "Mon profil",
             "icon": "user",
             "link": "#"
         },

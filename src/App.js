@@ -4,11 +4,13 @@ import { Icon } from 'antd';
 import { RingLoader as Loader } from 'halogenium';
 import Source from './tools/data';
 // import logo from './logo.svg';
-import './App.css';
-
 import Connexion from './components/Connexion';
 import Inscription from './components/Inscription';
 import Home from './components/Home';
+
+import './App.css';
+import 'antd/dist/antd.css';
+
 
 
 export default class App extends Component {
