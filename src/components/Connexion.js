@@ -54,7 +54,7 @@ export default class Connexion extends Component {
 
     render(){
 
-        if(this.state.home) return (<Redirect to={{pathname: '/home'}}/>);
+        if(this.state.home || localStorage.outoftenUser) return (<Redirect to={{pathname: '/home'}}/>);
             
         eventsEmitter.listen('modelChange', ({name, value}) => {
             // console.log('changeModel', name, value)

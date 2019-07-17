@@ -55,6 +55,8 @@ export default class Inscription extends Component {
 
     render(){
 
+        if(localStorage.outoftenUser) return <Redirect to="/home" />
+
         if(this.state.connect) return (<Redirect to={{
             pathname: '/connexion',
             state: {registered: true}

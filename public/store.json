@@ -23,7 +23,7 @@
         {
             "title": "Déconnexion",
             "icon": "poweroff",
-            "link": ""
+            "link": "deconnexion"
         }
     ],
     "footer": [

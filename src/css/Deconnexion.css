@@ -1,0 +1,16 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.emoji{
+    width: 50%;
+    margin-top: 10%;
+}
+
+.discButton{
+    margin-top: 5%;
+    width: 50%;
+}

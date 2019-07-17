@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Icon, Drawer } from 'antd';
-import {Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 import Source from '../tools/data';
 
@@ -39,10 +39,12 @@ export default class Header extends Component {
                     </div>}
                 >
                     {this.storeDef.menu.map((item, index) =>
-                        <div className="menuItem" key={index} onClick={() => <Redirect to={item.link} />}>
-                            <Icon type={item.icon} className="menuIcon" />
-                            <span className="menuText">{item.title}</span>
-                        </div>
+                        <Link to="/deconnexion" key={index}>
+                            <div className="menuItem">
+                                <Icon type={item.icon} className="menuIcon" />
+                                <span className="menuText">{item.title}</span>
+                            </div>
+                        </Link>
                     )}
                 </Drawer>
                 <Icon type="menu" className="headerIcon" onClick={() => this.toggleSideNav()} />

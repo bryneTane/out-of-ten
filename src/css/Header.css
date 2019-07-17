@@ -35,7 +35,7 @@
 }
 
 .menuText{
-    font-size: 1em;
+    font-size: 1.1em;
     vertical-align: 0.2em;
 }
 
@@ -43,4 +43,5 @@
     margin-bottom: 7%;
     padding-bottom: 7%;
     border-bottom: 0.1px solid #066422;
+    color: black !important;
 }

@@ -7,6 +7,7 @@ import Source from './tools/data';
 import Connexion from './components/Connexion';
 import Inscription from './components/Inscription';
 import Home from './components/Home';
+import Deconnexion from './components/Deconnexion';
 
 import './App.css';
 import 'antd/dist/antd.css';
@@ -22,7 +23,7 @@ export default class App extends Component {
             .then(resp => resp.json())
             .then(resp => {
                 Source.setDefs(resp);
-                console.log(resp);
+                // console.log(resp);
                 this.setState({ store: resp, isLoading: false});
             })
             .then()
@@ -53,6 +54,7 @@ export default class App extends Component {
           <Route exact path='/connexion' component={Connexion} />
           <Route exact path='/inscription' component={Inscription} />
           <Route exact path='/home' component={Home} />
+          <Route exact path='/deconnexion' component={Deconnexion} />
           {/* <Route exact path='/index.html' render={() => <Home stores={this.state.items}/>} /> */}
           {/* <Route component={ModalSwitch}/> */}
         </Switch>

@@ -16,7 +16,7 @@ export default class Footer extends Component {
 
     render(){
 
-        console.log(this.storeDef)
+        // console.log(this.storeDef)
 
         return(
             <div className="footer">
