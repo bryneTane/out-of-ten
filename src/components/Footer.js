@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Icon } from 'antd';
 import Source from '../tools/data';
 
@@ -22,9 +22,9 @@ export default class Footer extends Component {
             <div className="footer">
                 {this.storeDef.footer.map((item, index) => 
                 <div className="footerElt" key={index}>
-                    <Icon type={item.icon} onClick={()=><Redirect to={item.link} />} className="navIcon" />
+                    <Link to={item.link} ><Icon type={item.icon} className="navIcon" /></Link>
                     <br/>
-                    <span className="iconTitle" onClick={()=><Redirect to={item.link} />}>{item.title}</span>
+                    <Link to={item.link} ><span className="iconTitle" >{item.title}</span></Link>
                 </div>)}
             </div>
         );

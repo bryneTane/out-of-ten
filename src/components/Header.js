@@ -39,7 +39,7 @@ export default class Header extends Component {
                     </div>}
                 >
                     {this.storeDef.menu.map((item, index) =>
-                        <Link to="/deconnexion" key={index}>
+                        <Link to={item.link} key={index}>
                             <div className="menuItem">
                                 <Icon type={item.icon} className="menuIcon" />
                                 <span className="menuText">{item.title}</span>

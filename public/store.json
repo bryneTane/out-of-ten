@@ -23,7 +23,7 @@
         {
             "title": "Déconnexion",
             "icon": "poweroff",
-            "link": "deconnexion"
+            "link": "/deconnexion"
         }
     ],
     "footer": [
@@ -35,7 +35,7 @@
         {
             "title": "Accueil",
             "icon": "home",
-            "link": "#"
+            "link": "/home"
         },
         {
             "title": "Mon profil",
