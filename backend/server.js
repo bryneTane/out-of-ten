@@ -4,8 +4,9 @@ var cors = require('cors');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const User = require('./user');
+const md5 = require('md5');
 
-const API_PORT = 3002;
+const API_PORT = 3010;
 const app = express();
 app.use(cors());
 const router = express.Router();
@@ -59,34 +60,39 @@ router.delete('/deleteData', (req, res) => {
   });
 });
 
-// this is our create methid
-// this method adds new data in our database
 router.post('/register', (req, res) => {
     User.findOne({ id: req.body.id }).then(user => {
-        return new Promise((resolve, reject) => {
-            if (user) {
-                reject({success: false, err: "Cet identifiant est déjà utilisé"});
-            } else {
-                const newUser = new User({
-                    id: req.body.id,
-                    username: req.body.username,
-                    password: req.body.password
-                });
-                // Hash password before saving in database
-                newUser
-                .save()
-                .then(user => {
-                    res.json(user);
-                    resolve({success: true, log: "Inscription réussie"});
-                })
-                .catch(err => {
-                    console.log(err);
-                    reject({success: false, err: "Erreur lors de l'inscription"});
-                });
-            }
-          });
-
+        if (user) {
+            return res.status(400).json({ id: "Cet identifiant est déjà utilisé" });
+        } else {
+            const newUser = new User({
+                id: req.body.id,
+                username: req.body.username,
+                password: md5(req.body.password)
+            });
+            newUser
+            .save()
+            .then(user => res.json(user))
+            .catch(err => console.log(err));
+        }
     });
+});
+
+router.post('/connect', (req, res) => {
+  User.findOne({ id: req.body.id }).then(user => {
+      if (user) {
+          if(user.password !== md5(req.body.password)) return res.status(400).json({ id: "Identifiant ou mot de passe incorrect" });
+          else{
+            let data = {};
+            for(index in user){
+              data[index] = user[index];
+            }
+            return res.status(200).json(data);
+          }
+      } else {
+        return res.status(400).json({ id: "Identifiant ou mot de passe incorrect" });
+      }
+  });
 });
 
 // append /api for our http requests

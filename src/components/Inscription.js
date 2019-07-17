@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Form, TextField, SubmitField, FormEventsEmitter } from 'react-components-form';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Axios from 'axios';
 
 const eventsEmitter = new FormEventsEmitter();
@@ -14,6 +14,7 @@ export default class Inscription extends Component {
         password: false,
         confirm: false,
         message: "",
+        connect: false
     };
 
     withoutAccent = (string) => string.replace(/[ùûü]/g,"u").replace(/[îï]/g,"i").replace(/[àâä]/g,"a").replace(/[ôö]/g,"o").replace(/[éèêë]/g,"e").replace(/ç/g,"c");
@@ -38,15 +39,26 @@ export default class Inscription extends Component {
     }
 
     register = (data) => {
-        Axios.post('http://localhost:3002/api/register', {
+        Axios.post('http://localhost:3010/api/register', {
           id: data.id,
           username: data.username,
           password: data.password
         })
-        .then(resp => console.log(resp));
+        .then(resp => {
+            console.log(resp);
+            this.setState({connect: true})
+        })
+        .catch(err => {
+            this.setState({message: "Cet Identifiant est déjà utilisé !"});
+        })
       };
 
     render(){
+
+        if(this.state.connect) return (<Redirect to={{
+            pathname: '/connexion',
+            state: {registered: true}
+        }}/>);
 
         eventsEmitter.listen('modelChange', ({name, value}) => {
             // console.log('changeModel', name, value)

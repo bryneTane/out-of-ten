@@ -87,3 +87,9 @@
     color: red;
     font-style: italic;
 }
+
+.successMessage{
+    color: aliceblue;
+    font-style: italic;
+    font-weight: bold;
+}

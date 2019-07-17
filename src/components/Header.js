@@ -34,8 +34,8 @@ export default class Header extends Component {
                     style={{padding: 0}}
                     visible={this.state.isOpenSideNav}
                     title={<div className="menuTitle">
-                        <img src={`${process.env.PUBLIC_URL}/img/profile.png`} alt="profile" className="profileImage" />
-                        <span className="userName">Maureen Tueno</span>
+                        <img src={`${process.env.PUBLIC_URL}/img/${this.props.data.pp}`} alt="profile" className="profileImage" />
+                        <span className="userName">{this.props.data.username}</span>
                     </div>}
                 >
                     {this.storeDef.menu.map((item, index) =>
